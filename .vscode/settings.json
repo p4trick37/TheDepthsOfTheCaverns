@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Gdd 200 Final Project.sln"
+    "dotnet.defaultSolution": "Gdd-200-Final-Project.slnx"
 }

@@ -30,22 +30,22 @@ public class ArrowShooter : MonoBehaviour
         if (idNumber == 0)
         {
             spawnedArrow = Instantiate(arrow, spawnLocation.transform.position, Quaternion.Euler(0, 0, 90f));
-            spawnedArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(0, arrowSpeed);
+            spawnedArrow.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, arrowSpeed);
         }
         else if(idNumber == 1)
         {
             spawnedArrow = Instantiate(arrow, spawnLocation.transform.position, Quaternion.Euler(0, 0, -90f));
-            spawnedArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -arrowSpeed);
+            spawnedArrow.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -arrowSpeed);
         }
         else if(idNumber == 2)
         {
             spawnedArrow = Instantiate(arrow, spawnLocation.transform.position, Quaternion.Euler(0, 0, 180f));
-            spawnedArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed, 0);
+            spawnedArrow.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(arrowSpeed, 0);
         }
         else
         {
             spawnedArrow = Instantiate(arrow,spawnLocation.transform.position, Quaternion.identity);
-            spawnedArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(-arrowSpeed, 0);
+            spawnedArrow.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-arrowSpeed, 0);
         }
     }
 }

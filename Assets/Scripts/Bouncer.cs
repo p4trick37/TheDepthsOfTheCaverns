@@ -29,7 +29,7 @@ public class Bouncer : MonoBehaviour
         if(bounce == true)
         {
             ani.SetBool("shouldBounce", true);
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            player.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
             player.GetComponent<Player>().ableToJump = false;
             if(bounceToTheLeft == true)
             {

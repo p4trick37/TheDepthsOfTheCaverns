@@ -1,11 +1,5 @@
-using System.Buffers.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.SceneManagement;
-using UnityEngine.Timeline;
+
 
 public class Player : MonoBehaviour
 {
@@ -204,7 +198,7 @@ public class Player : MonoBehaviour
         count++;
         if(count == 1)
         {
-            rb.velocity = new Vector3(0,0);
+            rb.linearVelocity = new Vector3(0,0);
         }
         
         if(count > 10) 
