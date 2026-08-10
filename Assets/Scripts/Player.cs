@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
         {
             deathCounter = 0;
         }
+
+
     }
 
 
@@ -51,6 +53,7 @@ public class Player : MonoBehaviour
             {
                 jump = true;
                 ableToJump = false;
+                playerAni.PlayJump();
             }
         }
         else if(ableToJump == false)
@@ -58,6 +61,7 @@ public class Player : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 allowToDrop = true;
+                playerAni.PlayDrop();
             }
         }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerAnimation : MonoBehaviour
 {
@@ -14,30 +15,24 @@ public class PlayerAnimation : MonoBehaviour
     public ParticleSystem dropParticles;
     private ParticleSystem dropParticlesInstance;
 
+
+    private void Awake()
+    {
+        player = FindAnyObjectByType<Player>();
+    }
+
     void Start()
     {
         delay = runTime;    
     }
     void Update()
     {
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && player.ableToJump == true)
-        {
-            jumping = true;
-            delay = runTime;
-        }
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && player.ableToJump == false)
-        {
-            jumping = false;
-            dropping = true;
-            dropParticlesInstance = Instantiate(dropParticles, new Vector3(transform.position.x, transform.position.y - 0.3f, 0), Quaternion.Euler(0, 0, -118));
-        }
-
-
         if(dropping == true)
         {
             ani.Play("Player Drop");
             delay = 1;
         }
+
         if(jumping == true)
         {
             delay-= Time.deltaTime;
@@ -48,6 +43,19 @@ public class PlayerAnimation : MonoBehaviour
             }
             ani.Play("Player Jump");
         }
+    }
+
+    public void PlayDrop()
+    {
+        jumping = false;
+        dropping = true;
+        dropParticlesInstance = Instantiate(dropParticles, new Vector3(transform.position.x, transform.position.y - 0.3f, 0), Quaternion.Euler(0, 0, -118));
+    }
+
+    public void PlayJump()
+    {
+        jumping = true;
+        delay = runTime;
     }
 
 }
