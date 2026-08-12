@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Right Wall")
         {
@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
            if(collision.gameObject.CompareTag("Jumpable Surface") || collision.gameObject.CompareTag("Bouncer"))
            {
@@ -162,7 +162,7 @@ public class Player : MonoBehaviour
            }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Jumpable Surface"))
         {
@@ -179,7 +179,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.name.Equals("HighZone"))
         {
